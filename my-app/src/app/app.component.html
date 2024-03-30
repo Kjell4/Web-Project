@@ -2,18 +2,26 @@
 
 <img class="logo" src="https://i.pinimg.com/originals/95/f8/58/95f8588d6469a16271ea2d2fad419d00.png" width="300px">
 
-<button class="category_button">
-  <img class="category_icon" src="https://cdn.onlinewebfonts.com/svg/img_87908.png" width="30px">
-  <span>Categories</span>
-</button>
+<a [routerLink]="['/category']">
+  <button class="category_button">
+    <img class="category_icon" src="https://cdn.onlinewebfonts.com/svg/img_87908.png" width="30px">
+    <span>Categories</span>
+  </button>
+</a>
+
+<a [routerLink]="['/about']">
+  <span id="about_us">About Us</span>
+</a>
 
 <button class="login_button">Log in</button>
 <button class="signup_button">Sign up</button>
 
 <button class="cart_button">
-  <img src="https://yt3.googleusercontent.com/ytc/AOPolaRluT-DmjcHi-uR56Hc_wpOl1OMsqPT0GitxZvQ=s900-c-k-c0x00ffffff-no-rj" width="50px">
+  <img src="https://cdn-icons-png.flaticon.com/512/3936/3936942.png" width="40px">
 </button>
 
 <hr>
 
 </div>
+
+<router-outlet></router-outlet>
