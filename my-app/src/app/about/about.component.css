@@ -12,11 +12,9 @@
 }
 
 #second-page-text {
-    margin-top: 25px;
     border: 2px solid rgb(108 93 211);
     background-color: rgb(240, 238, 251);
     border-radius: 12px;
-    margin-left: 15px;
 }
 
 #secondd {
@@ -95,7 +93,6 @@
 }
 
 #book-shelf {
-    margin-left: 180px;
     margin-top: 30px;
     width: 660px;
     height: auto;
