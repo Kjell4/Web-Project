@@ -1,7 +1,11 @@
 <div *ngIf="loaded; else loading">
     <div id="book_item" *ngFor="let book of books">
-        <h3>{{book.title}}</h3>
-        <p>{{book.description}}</p>
+        <div id="book_item_view">
+            <img src="{{book.image}}" width=250px>
+            <h3>{{book.title}}</h3>
+            <h6>{{book.author}}</h6>
+            <h4>{{book.price}}</h4>
+        </div>
      </div>
 </div>
 
