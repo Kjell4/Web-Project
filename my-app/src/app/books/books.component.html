@@ -1,0 +1,10 @@
+<div *ngIf="loaded; else loading">
+    <div id="book_item" *ngFor="let book of books">
+        <h3>{{book.title}}</h3>
+        <p>{{book.description}}</p>
+     </div>
+</div>
+
+<ng-template #loading>
+    <p>Companies are loading...</p>
+</ng-template>

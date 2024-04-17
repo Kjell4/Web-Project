@@ -1,0 +1,31 @@
+<div *ngIf="loaded; else loading">
+    <div id="category_item" *ngFor="let category of categories">
+        <a *ngIf="category.name === 'Classic'" [routerLink]="['/category', category.id, 'books']">
+            <div id="classic">
+                <button id="classic_button"><img src="https://static.vecteezy.com/system/resources/previews/014/989/473/original/classic-literary-book-icon-flat-isolated-vector.jpg" width="100%"></button>
+            </div> 
+        </a>
+        <a *ngIf="category.name === 'Fantasy'" [routerLink]="['/category', category.id, 'books']">
+            <div id="fantasy">
+                <button id="fantasy_button" [routerLink]="['/categories', category.id, 'books']"><img src="https://static.vecteezy.com/system/resources/previews/014/916/899/non_2x/fantasy-book-icon-flat-isolated-vector.jpg" width="100%"></button>
+            </div>
+        </a>
+        <a *ngIf="category.name === 'Thriller'" [routerLink]="['/category', category.id, 'books']">
+            <div id="thriller">
+                <button id="thriller_button" [routerLink]="['/categories', category.id, 'books']"><img src="https://cdn.vectorstock.com/i/preview-1x/66/18/thriller-book-icon-flat-isolated-vector-38906618.jpg" width="54%"></button>
+            </div>
+        </a>
+        <a *ngIf="category.name === 'Science'" [routerLink]="['/category', category.id, 'books']">
+            <div id="science">
+                <button id="science_button" [routerLink]="['/categories', category.id, 'books']"><img src="https://img.freepik.com/premium-vector/science-book-vector-cute-book-icon_178355-325.jpg" width="100%"></button>
+            </div>
+        </a>
+    </div>
+</div>
+
+<ng-template #loading>
+    <p>Companies are loading...</p>
+</ng-template>
+
+
+
