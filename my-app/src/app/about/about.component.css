@@ -93,8 +93,9 @@
 }
 
 #book-shelf {
-    margin-top: 30px;
-    width: 660px;
+    margin-left: 20%;
+    margin-top: 3%;
+    width: 60%;
     height: auto;
     padding-left: -50px;
 }
