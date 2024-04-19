@@ -21,6 +21,13 @@ export class BookDetailsComponent implements OnInit{
     this.getBook();
   }
 
+  
+  // like(): void {
+  //   if (this.book) {
+  //     this.book.likes++;
+  //   }
+  // }
+
   getBook(): void {
   this.route.paramMap.subscribe(params => {
     const bookId: number = Number(params.get('id'));
@@ -28,10 +35,10 @@ export class BookDetailsComponent implements OnInit{
     this.dataService.getBook(bookId).subscribe((book: Book) => {
       this.book = book;
       console.log(book);
+      this.book.likes = this.book.likes || 0;
       this.loaded = true;
     });
   });
 }
 
 }
-

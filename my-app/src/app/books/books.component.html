@@ -1,4 +1,4 @@
-<div *ngIf="loaded; else loading">
+<div *ngIf="loaded; else loading"  class="book-container">
     <div id="book_item" *ngFor="let book of books">
         <div id="book_item_view" (click)="getBookDetails(book.id)">
             <img src="{{book.image}}" width=250px>

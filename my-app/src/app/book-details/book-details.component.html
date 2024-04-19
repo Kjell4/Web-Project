@@ -13,6 +13,17 @@
     </div>
 </div>
 
+ <div class="inner">
+    <p>Rating: {{ book.rating }}</p>
+</div>
+
+
+<div class="btns">
+    <div class="like-btn">
+        <button class="like" (click)="book.likes=book.likes+1"><img src="https://cdn.pixabay.com/photo/2020/09/30/07/48/heart-5614865_1280.png"><div class="num">{{ book.likes }}</div></button>        
+    </div>
+</div> 
+
 <ng-template #loading>
     <p>Companies are loading...</p>
 </ng-template>
