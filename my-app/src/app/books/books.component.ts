@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../models';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { DataService } from '../data.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-books',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './books.component.html',
   styleUrl: './books.component.css'
 })
@@ -15,7 +15,7 @@ export class BooksComponent implements OnInit{
   books!: Book[];
   loaded:boolean = false;
 
-  constructor(private route: ActivatedRoute, private dataService: DataService){}
+  constructor(private route: ActivatedRoute,private router: Router, private dataService: DataService){}
 
   ngOnInit(): void {
     this.getBooks();
@@ -31,5 +31,10 @@ export class BooksComponent implements OnInit{
         this.loaded = true;
       });
      })
+  }
+
+  getBookDetails(bookId: number): void {
+    const categoryId = this.route.snapshot.paramMap.get('id');
+    this.router.navigate(['/category', categoryId, 'books', bookId]);
   }
 }

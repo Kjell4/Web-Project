@@ -1,0 +1,31 @@
+img{
+    position: relative;
+    float: left; 
+    margin-right: 20px;
+    margin-top: -30px;
+}
+h2{
+    margin-top: -50px;
+}
+h3{
+    font-size: 30px;
+}
+#text{
+    float:right;
+    margin-top: 30px;
+    margin-right: 220px;
+    width: 900px;
+}
+h4{
+    color:#4d4d4d;
+}
+#add_to_cart_btn{
+    width: 200px;
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+    border: orange;
+    background-color: #f15a2c;
+    cursor: pointer;
+}
+

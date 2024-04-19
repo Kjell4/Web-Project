@@ -51,3 +51,15 @@ def books_by_category(request, pk=None):
     books_json = [b.to_json() for b in books]
 
     return JsonResponse(books_json, safe=False)
+
+def book_by_id(request, pk=None, pk2=None):
+    try:
+        category = Category.objects.get(pk=pk)
+        book = Book.objects.get(pk=pk2)
+    except Book.DoesNotExist:
+        raise Http404("Book does not exist")
+
+    book_json = book.to_json()
+
+    return JsonResponse(book_json, safe=False)
+

@@ -13,7 +13,12 @@ export class DataService {
   getCategories(): Observable<Category[]>{
     return this.client.get<Category[]>(`/api/categories`)
   }
-
+  getCategory(id: number): Observable<Category>{
+    return this.client.get<Category>(`/api/categories/${id}`)
+  }
+  getBook(id:number): Observable<Book>{
+    return this.client.get<Book>(`/api/categories/${id}/books/${id}`)
+  }
   getBooks(id: number): Observable<Book[]>{
     return this.client.get<Book[]>(`/api/categories/${id}/books`)
   }

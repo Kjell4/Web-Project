@@ -1,1 +1,18 @@
-<p>book-details works!</p>
+<div *ngIf="loaded; else loading">
+    <div id="book_details">
+            <img src="{{book.image}}" width=320px>
+            <div id="text">
+                <h2>{{book.title}}</h2>
+                <h3>{{book.price}}</h3>
+                <button id="add_to_cart_btn">Add to cart</button>
+                <h4>Author: {{book.author}}</h4>
+                <h4>Year: {{book.year}}</h4>
+                <h4>Publisher: {{book.publisher}}</h4>
+                <p>{{book.description}}</p>
+            </div>
+    </div>
+</div>
+
+<ng-template #loading>
+    <p>Companies are loading...</p>
+</ng-template>
