@@ -4,6 +4,7 @@
 
 }
 .category_button{
+    position: absolute;
     cursor: pointer;
     float: right;
     margin-right: 1150px;
@@ -21,9 +22,9 @@
     font-size: 14px;
 }
 .login_button{
-    float: right;
-    margin-right: 160px;
-    margin-top: -130px;
+    position: absolute;
+    margin-left: 940px;
+    margin-top: 22px;
     padding: 12px;
     border-radius: 8px;
     background-color: rgb(108 93 211);
@@ -33,9 +34,9 @@
     cursor: pointer;
 }
 .signup_button{
-    float: right;
-    margin-right: 50px;
-    margin-top: -130px;
+    position: absolute;
+    margin-left: 1050px;
+    margin-top: 22px;
     padding: 12px;
     border-radius: 8px;
     background-color: rgb(108 93 211);
@@ -45,11 +46,11 @@
     cursor: pointer;
 }
 .cart_button{
+    position: absolute;
     background-color: white;
     border: none;
-    float: right;
-    margin-right: 265px;
-    margin-top: -131px;
+    margin-left: 830px;
+    margin-top: 22px;
     cursor: pointer;
 }
 hr{

@@ -18,6 +18,7 @@ class Book(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     description = models.TextField()
     price = models.CharField(max_length=50)
+    rating = models.CharField(max_length=50)
 
     class Meta:
         verbose_name = "Book"
@@ -33,5 +34,6 @@ class Book(models.Model):
             "image": self.image,
             "category": self.category.name,
             "description": self.description,
-            "price": self.price
+            "price": self.price,
+            "rating": self.rating
         }

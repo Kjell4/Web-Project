@@ -29,16 +29,17 @@ export class BookDetailsComponent implements OnInit{
   // }
 
   getBook(): void {
-  this.route.paramMap.subscribe(params => {
-    const bookId: number = Number(params.get('id'));
-    this.loaded = false;
-    this.dataService.getBook(bookId).subscribe((book: Book) => {
-      this.book = book;
-      console.log(book);
-      this.book.likes = this.book.likes || 0;
-      this.loaded = true;
+    this.route.paramMap.subscribe(params => {
+      const categoryId: number = Number(params.get('categoryId')); // Используйте categoryId
+      const bookId: number = Number(params.get('bookId')); // Используйте bookId
+      this.loaded = false;
+      this.dataService.getBook(categoryId, bookId).subscribe((book: Book) => {
+        this.book = book;
+        console.log(book);
+        this.book.likes = this.book.likes || 0;
+        this.loaded = true;
+      });
     });
-  });
-}
+  }
 
 }

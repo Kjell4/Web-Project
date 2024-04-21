@@ -31,14 +31,9 @@ h4{
 .inner {    
     background-color: white;
     padding: 0 10px;
-    margin-left: 375px;
+    margin-left: 341px;
     margin-top: 50px;
 }
-
-
-
-
-
 .btns{   
     height: 40px;
     display: flex;
@@ -50,8 +45,6 @@ h4{
 
 .like img{
     position: absolute;
-    width: 30px;
-    height: 30px;
     margin-left: -25px;
     margin-top: -65px;
 }
@@ -60,5 +53,4 @@ h4{
     position: absolute;
     margin-left: 20px;
     margin-top: -55px;
-
 }

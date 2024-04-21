@@ -16,8 +16,8 @@ export class DataService {
   getCategory(id: number): Observable<Category>{
     return this.client.get<Category>(`/api/categories/${id}`)
   }
-  getBook(id:number): Observable<Book>{
-    return this.client.get<Book>(`/api/categories/${id}/books/${id}`)
+  getBook(categoryId: number, bookId: number): Observable<Book>{
+    return this.client.get<Book>(`/api/categories/${categoryId}/books/${bookId}`);
   }
   getBooks(id: number): Observable<Book[]>{
     return this.client.get<Book[]>(`/api/categories/${id}/books`)
