@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { CategoryComponent } from './category/category.component';
 import { BooksComponent } from './books/books.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { CartComponent } from './cart/cart.component';
 
 export const routes: Routes = [
     {path: '', redirectTo:'home', pathMatch:'full'},
@@ -11,6 +12,6 @@ export const routes: Routes = [
     {path: 'category', component: CategoryComponent, title: 'Category'},
     {path: 'about', component: AboutComponent, title: 'About'},
     {path: 'category/:id/books', component: BooksComponent, title: 'Books'},
-    { path: 'category/:categoryId/books/:bookId', component: BookDetailsComponent, title: 'Book Details' }
-
+    { path: 'category/:categoryId/books/:bookId', component: BookDetailsComponent, title: 'Book Details' },
+    {path: 'cart', component: CartComponent, title: 'Cart'},
 ];

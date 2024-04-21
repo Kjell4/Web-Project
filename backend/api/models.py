@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.contrib.auth.models import User
+
 from django.db import models
 
 class Category(models.Model):
@@ -37,3 +39,18 @@ class Book(models.Model):
             "price": self.price,
             "rating": self.rating
         }
+    
+class Cart(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
+
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='cart',
+        null=True, blank=True
+    )
+
+    class Meta:
+        verbose_name = "Cart"
+        verbose_name_plural = "Cart"

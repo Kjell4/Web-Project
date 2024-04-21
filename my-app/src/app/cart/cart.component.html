@@ -1,0 +1,22 @@
+<div *ngIf="logged">
+    <button (click)="logout()">Logout</button>
+    <h2>Shopping Cart</h2>
+    <ul>
+      <li *ngFor="let item of cartItems">
+        {{ item.book.title }} - {{ item.book.price }}
+      </li>
+    </ul>
+  </div>
+<div *ngIf="!logged">
+    <p>Please log in to view your shopping cart.</p>
+    <h3>Login form</h3>
+    <fieldset>
+      <label for="username">Username: </label>
+      <input type="text" id="username" [(ngModel)]="username">
+    </fieldset>
+    <fieldset>
+      <label for="password">Password: </label>
+      <input type="password" id="password" [(ngModel)]="password">
+    </fieldset>
+    <button (click)="login()">Login</button>
+</div>

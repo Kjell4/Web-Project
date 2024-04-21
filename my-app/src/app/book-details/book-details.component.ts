@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from '../models';
+import { Book, CartItem } from '../models';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../data.service';
 import { CommonModule } from '@angular/common';
@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class BookDetailsComponent implements OnInit{
   book!: Book;
+  cartItem!: CartItem;
   loaded:boolean = false;
 
   constructor(private route: ActivatedRoute, private dataService: DataService){}
@@ -42,4 +43,29 @@ export class BookDetailsComponent implements OnInit{
     });
   }
 
+  addToCart(): void {
+    // Получаем аутентификационные данные (например, токен доступа) из localStorage
+    const access: string | null = localStorage.getItem("access");
+    
+    if (access) {
+      // Создаем объект CartItem
+      const cartItem: CartItem = {
+        book: this.book,
+        quantity: 1
+      };
+  
+      // Передаем аутентификационные данные в метод addToCart() сервиса данных
+      this.dataService.addToCart(cartItem).subscribe(() => {
+        alert('Книга успешно добавлена в корзину!');
+      }, error => {
+        console.error('Не удалось добавить книгу в корзину:', error);
+        alert('Не удалось добавить книгу в корзину. Пожалуйста, попробуйте позже.');
+      });
+    } else {
+      console.error('Не удалось получить доступ к токену.');
+      alert('Ошибка: токен доступа не найден.');
+    }
+  }
+  
 }
+
