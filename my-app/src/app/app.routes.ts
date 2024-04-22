@@ -5,6 +5,7 @@ import { CategoryComponent } from './category/category.component';
 import { BooksComponent } from './books/books.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { CartComponent } from './cart/cart.component';
+import {LoginComponent} from "./login/login.component";
 
 export const routes: Routes = [
     {path: '', redirectTo:'home', pathMatch:'full'},
@@ -14,4 +15,6 @@ export const routes: Routes = [
     {path: 'category/:id/books', component: BooksComponent, title: 'Books'},
     { path: 'category/:categoryId/books/:bookId', component: BookDetailsComponent, title: 'Book Details' },
     {path: 'cart', component: CartComponent, title: 'Cart'},
+  {path: 'login', component:LoginComponent, title:'Login'},
+
 ];

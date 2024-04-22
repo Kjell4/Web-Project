@@ -1,6 +1,15 @@
 <div class="top_bar">
 
-<img class="logo" src="https://i.pinimg.com/originals/95/f8/58/95f8588d6469a16271ea2d2fad419d00.png" width="300px">
+<!--
+<a [routerLink]="['/home']">
+  <button>
+    <img class='logo' src="https://i.pinimg.com/originals/95/f8/58/95f8588d6469a16271ea2d2fad419d00.png" width="300px">
+  </button>
+</a>
+-->
+  <a [routerLink]="['/home']" class='home_button'>
+    <img class='logo' src="https://i.pinimg.com/originals/95/f8/58/95f8588d6469a16271ea2d2fad419d00.png" width="300px">
+</a>
 
 <a [routerLink]="['/category']">
   <button class="category_button">
@@ -13,7 +22,7 @@
   <span id="about_us">About Us</span>
 </a>
 
-<button class="login_button">Log in</button>
+<button class="login_button" [routerLink]="['/login']">Log in</button>
 <button class="signup_button">Sign up</button>
 
 <button class="cart_button" [routerLink]="['/cart']">

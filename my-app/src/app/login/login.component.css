@@ -1,0 +1,50 @@
+h3 ,h1{
+
+    font-size: 28px;
+    font-weight: 700;
+    color: rgb(108 93 211);;
+    margin-bottom: 25px;
+    margin-top: 35px;
+}
+
+input {
+    width: 80%;
+    height: 30px;
+    margin-left: 60px;
+    margin-bottom: 16px;
+    cursor: text;
+    border-radius: 5px;
+    border: 1px solid #b9bcbe;
+    padding: 6px 12px;
+}
+label {
+    text-align: left;
+    margin-bottom: 7px;
+    margin-left: 60px;
+    font-size: 18px;
+    color: #cccccc;
+}
+
+#submit {
+    background-color:  rgb(108 93 211);
+    cursor: pointer;
+    width: 84%;
+    height: 40px;
+    line-height: 1.4em;
+    color: #fff;
+    padding: 6px 12px;
+    font-weight: bold;
+    margin-bottom: 35px;
+    margin-left: 60px;
+    border: none;
+}
+
+h2{
+        text-align: center;
+        font-size: 1.25rem;
+        line-height: 1.4;
+        font-weight: 600;
+        color: rgb(108 93 211);
+        padding: 0px 0px 2rem;
+
+}

@@ -3,6 +3,14 @@
     margin-left: -30px;
 
 }
+
+.home_button{
+    display: inline-block;
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+}
 .category_button{
     position: absolute;
     cursor: pointer;

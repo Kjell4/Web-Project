@@ -1,0 +1,13 @@
+<div *ngIf="!logged">
+    <h1>Please log in.</h1>
+    <h3>Login form</h3>
+    <fieldset>
+      <label for="username">Username: </label>
+      <input type="text" id="username" [(ngModel)]="username">
+    </fieldset>
+    <fieldset>
+      <label for="password">Password: </label>
+      <input type="password" id="password" [(ngModel)]="password">
+    </fieldset>
+    <button (click)="login()" id="submit">Login</button>
+</div>
