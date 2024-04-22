@@ -1,6 +1,6 @@
 <div *ngIf="logged">
-    <button (click)="logout()">Logout</button>
-    <h2>Shopping Cart</h2>
+  <h2>Shopping Cart</h2>
+    <button (click)="logout()" id="submit">Logout</button>
     <ul>
       <li *ngFor="let item of cartItems">
         {{ item.book.title }} - {{ item.book.price }}
@@ -8,7 +8,7 @@
     </ul>
   </div>
 <div *ngIf="!logged">
-    <p>Please log in to view your shopping cart.</p>
+    <h1>Please log in to view your shopping cart.</h1>
     <h3>Login form</h3>
     <fieldset>
       <label for="username">Username: </label>
@@ -18,5 +18,5 @@
       <label for="password">Password: </label>
       <input type="password" id="password" [(ngModel)]="password">
     </fieldset>
-    <button (click)="login()">Login</button>
+    <button (click)="login()" id="submit">Login</button>
 </div>
