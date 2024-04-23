@@ -82,4 +82,38 @@ h2{
     position: absolute;
 }
 
+.features-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background: #ffffff; /* Или любой другой цвет фона */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для красивого выделения */
+  margin-top: 20px; /* Расстояние от предыдущего блока */
+}
+
+.feature-item {
+  text-align: center;
+  width: 20%; /* Ширина каждого блока */
+}
+
+.feature-icon {
+  width: 48px; /* Размер иконки */
+  height: auto; /* Автоматическая высота для сохранения пропорций */
+  margin-bottom: 10px; /* Отступ иконки от заголовка */
+}
+
+/* Добавьте медиа-запросы для адаптивности, если необходимо */
+@media (max-width: 768px) {
+  .features-section {
+    flex-direction: column;
+  }
+
+  .feature-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.second_p{
+  color: #CDCDCD ;
+}
 
