@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 export class BooksComponent implements OnInit{
   books!: Book[];
   loaded:boolean = false;
+  
 
   constructor(private route: ActivatedRoute,private router: Router, private dataService: DataService){}
 
