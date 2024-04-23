@@ -1,13 +1,27 @@
-<div *ngIf="!logged">
-    <h1>Please log in.</h1>
-    <h3>Login form</h3>
-    <fieldset>
-      <label for="username">Username: </label>
-      <input type="text" id="username" [(ngModel)]="username">
-    </fieldset>
-    <fieldset>
-      <label for="password">Password: </label>
-      <input type="password" id="password" [(ngModel)]="password">
-    </fieldset>
-    <button (click)="login()" id="submit">Login</button>
+<div *ngIf="!logged" class="container">
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
+  <div class="screen">
+    <div class="screen__content">
+      <form class="login">
+        <div class="login__field">
+          <i class="login__icon fas fa-user"></i>
+          <input type="text" class="login__input" placeholder="User name / Email" [(ngModel)]="username" id="username">
+        </div>
+        <div class="login__field">
+          <i class="login__icon fas fa-lock"></i>
+          <input type="password" class="login__input" placeholder="Password" [(ngModel)]="password" id="password">
+        </div>
+        <button class="button login__submit" (click)="login()">
+          <span class="button__text">Log In Now</span>
+          <i class="button__icon fas fa-chevron-right"></i>
+        </button>
+      </form>
+    </div>
+    <div class="screen__background">
+      <span class="screen__background__shape screen__background__shape4"></span>
+      <span class="screen__background__shape screen__background__shape3"></span>
+      <span class="screen__background__shape screen__background__shape2"></span>
+      <span class="screen__background__shape screen__background__shape1"></span>
+    </div>
+  </div>
 </div>
