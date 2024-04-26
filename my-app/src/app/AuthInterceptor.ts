@@ -1,21 +1,33 @@
-import {Injectable, Provider} from "@angular/core";
-import {HTTP_INTERCEPTORS, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor() {
-  }
+  constructor() {}
 
-  intercept(req: HttpRequest<any>, next: HttpHandler) {
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const access = localStorage.getItem("access");
+    let newReq = req;
     if (access) {
-      const newReq = req.clone({
+      newReq = req.clone({
         headers: req.headers.set('Authorization', `Bearer ${access}`)
       });
-      return next.handle(newReq);
     }
+    const csrfToken = this.getCSRFToken();
+    if (csrfToken) {
+      newReq = newReq.clone({
+        headers: newReq.headers.set('X-CSRFToken', csrfToken)
+      });
+    }
+    return next.handle(newReq);
+  }
 
-    return next.handle(req);
+  private getCSRFToken(): string | null {
+    return document.cookie.split(';')
+      .map(c => c.trim())
+      .find(c => c.startsWith('csrftoken='))
+      ?.split('=')[1] || null;
   }
 }

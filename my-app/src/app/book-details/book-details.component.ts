@@ -16,6 +16,10 @@ export class BookDetailsComponent implements OnInit{
   cartItem!: CartItem;
   loaded:boolean = false;
 
+  logged: boolean = false;
+  username: string = "";
+  password: string = "";
+
   constructor(private route: ActivatedRoute, private dataService: DataService){}
 
   ngOnInit(): void {
@@ -44,28 +48,9 @@ export class BookDetailsComponent implements OnInit{
   }
 
   addToCart(): void {
-    // Получаем аутентификационные данные (например, токен доступа) из localStorage
-    const access: string | null = localStorage.getItem("access");
-    
-    if (access) {
-      // Создаем объект CartItem
-      const cartItem: CartItem = {
-        book: this.book,
-        quantity: 1
-      };
-  
-      // Передаем аутентификационные данные в метод addToCart() сервиса данных
-      this.dataService.addToCart(cartItem).subscribe(() => {
-        alert('Книга успешно добавлена в корзину!');
-      }, error => {
-        console.error('Не удалось добавить книгу в корзину:', error);
-        alert('Не удалось добавить книгу в корзину. Пожалуйста, попробуйте позже.');
+      this.dataService.addToCart(this.cartItem).subscribe((data) => {
+        this.cartItem = data;
       });
-    } else {
-      console.error('Не удалось получить доступ к токену.');
-      alert('Ошибка: токен доступа не найден.');
-    }
   }
-  
 }
 

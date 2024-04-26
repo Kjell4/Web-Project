@@ -1,11 +1,19 @@
 <div *ngIf="logged">
   <h2>Shopping Cart</h2>
     <button (click)="logout()" id="submit">Logout</button>
-    <ul>
-      <li *ngFor="let item of cartItems">
-        {{ item.book.title }} - {{ item.book.price }}
-      </li>
-    </ul>
+    <table border="1">
+      <tr id="header_table">
+        <td>Book title</td>
+        <td>Price</td>
+        <td>Quntity</td>
+      </tr>
+      <tr *ngFor="let item of cartItems">
+        <td>{{item.book.title}}</td>
+        <td>{{item.book.price}}</td>
+        <td>{{item.quantity}}</td>
+      </tr>
+  </table>
+  <button id="buy_btn">Buy</button>
   </div>
 
 <div *ngIf="!logged">

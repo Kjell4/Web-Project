@@ -18,6 +18,7 @@ export interface Book{
 }
 
 export interface CartItem {
+    id: number;
     book: Book;
     quantity: number;
 }

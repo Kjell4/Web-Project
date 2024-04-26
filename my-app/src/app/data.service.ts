@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Book, CartItem, Category, Token } from './models';
 import { Observable } from 'rxjs';
@@ -14,7 +14,14 @@ export class DataService {
     return this.client.post<Token>(
       `/api/login/`,
       {username, password}
-    )
+    );
+  }
+
+  private getRequestHeaders(): HttpHeaders {
+    return new HttpHeaders({
+      'Content-Type': 'application/json',
+      // Exclude the CSRF token here
+    });
   }
 
   getCategories(): Observable<Category[]>{
@@ -36,7 +43,9 @@ export class DataService {
   addToCart(item: CartItem): Observable<any> {
     return this.client.post<any>('/api/cart/', item);
   }
+  
   getCartBooks(): Observable<CartItem[]> {
     return this.client.get<CartItem[]>('/api/cart/');
   }
+  
 }

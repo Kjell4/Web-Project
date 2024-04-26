@@ -13,8 +13,7 @@ export const routes: Routes = [
     {path: 'category', component: CategoryComponent, title: 'Category'},
     {path: 'about', component: AboutComponent, title: 'About'},
     {path: 'category/:id/books', component: BooksComponent, title: 'Books'},
-    { path: 'category/:categoryId/books/:bookId', component: BookDetailsComponent, title: 'Book Details' },
+    {path: 'category/:categoryId/books/:bookId', component: BookDetailsComponent, title: 'Book Details' },
     {path: 'cart', component: CartComponent, title: 'Cart'},
-  {path: 'login', component:LoginComponent, title:'Login'},
-
+    {path: 'login', component:LoginComponent, title:'Login'},
 ];

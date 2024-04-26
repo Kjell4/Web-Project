@@ -1,5 +1,5 @@
 h3 ,h1{
-
+    text-align: center;
     font-size: 28px;
     font-weight: 700;
     color: rgb(108 93 211);;
@@ -22,21 +22,22 @@ label {
     margin-bottom: 7px;
     margin-left: 60px;
     font-size: 18px;
-    color: #cccccc;
+    color: #000000;
 }
 
 #submit {
     background-color:  rgb(108 93 211);
     cursor: pointer;
-    width: 84%;
+    width: 500px;
     height: 40px;
     line-height: 1.4em;
     color: #fff;
     padding: 6px 12px;
     font-weight: bold;
     margin-bottom: 35px;
-    margin-left: 60px;
+    margin-left: 490px;
     border: none;
+    margin-top: 20px;
 }
 
 h2{
@@ -47,4 +48,31 @@ h2{
         color: rgb(108 93 211);
         padding: 0px 0px 2rem;
 
+}
+fieldset{
+    width: 600px;
+    margin-left: 420px;
+    padding: 20px;
+}
+#header_table{
+    font-weight: bold;
+}
+table{
+    margin-left: 350px;
+    width: 800px;
+    padding: 5px;
+}
+#buy_btn{
+    background-color:  rgb(108 93 211);
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    line-height: 1.4em;
+    color: #fff;
+    padding: 6px 12px;
+    font-weight: bold;
+    margin-bottom: 35px;
+    margin-left: 690px;
+    margin-top: 50px;
+    border: none;
 }

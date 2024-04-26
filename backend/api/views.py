@@ -5,44 +5,54 @@ from rest_framework import status
 from .models import Cart, Category, Book
 from .serializers import CartSerializer, CategorySerializer, BookSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.generics import RetrieveAPIView
+from django.contrib.auth.models import User
+
 
 class CategoryList(APIView):
+    @csrf_exempt
     def get(self, request):
         categories = Category.objects.all()
         serializer = CategorySerializer(categories, many=True)
         return Response(serializer.data)
 
 class CategoryDetail(APIView):
+    @csrf_exempt
     def get_object(self, pk):
         try:
             return Category.objects.get(pk=pk)
         except Category.DoesNotExist:
             raise Http404
 
+    @csrf_exempt
     def get(self, request, pk):
         category = self.get_object(pk)
         serializer = CategorySerializer(category)
         return Response(serializer.data)
 
 class BookList(APIView):
+    @csrf_exempt
     def get(self, request):
         books = Book.objects.all()
         serializer = BookSerializer(books, many=True)
         return Response(serializer.data)
 
 class BookDetail(APIView):
+    @csrf_exempt
     def get_object(self, pk):
         try:
             return Book.objects.get(pk=pk)
         except Book.DoesNotExist:
             raise Http404
 
+    @csrf_exempt
     def get(self, request, pk):
         book = self.get_object(pk)
         serializer = BookSerializer(book)
         return Response(serializer.data)
     
-
+@csrf_exempt
 def books_by_category(request, pk=None):
     try:
         books = Book.objects.filter(category_id=pk)
@@ -53,6 +63,7 @@ def books_by_category(request, pk=None):
 
     return JsonResponse(books_json, safe=False)
 
+@csrf_exempt
 def book_by_id(request, pk=None, pk2=None):
     try:
         category = Category.objects.get(pk=pk)
